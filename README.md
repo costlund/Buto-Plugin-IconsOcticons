@@ -17,6 +17,8 @@ data:
   method: svg
   data:
     name: alert
+    attribute:
+      id: _my_svg_icon_
 ```
 
 

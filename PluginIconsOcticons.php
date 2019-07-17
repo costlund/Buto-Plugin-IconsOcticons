@@ -5,8 +5,9 @@
 class PluginIconsOcticons{
   public function widget_svg($data){
     $data = new PluginWfArray($data);
-    $src = '/plugin/icons/octicons/build/svg/'.$data->get('data/name').'.svg';
-    wfDocument::renderElement(array(wfDocument::createHtmlElement('img', null, array('src' => $src))));
+    $attribute = new PluginWfArray($data->get('data/attribute'));
+    $attribute->set('src', '/plugin/icons/octicons/build/svg/'.$data->get('data/name').'.svg');
+    wfDocument::renderElement(array(wfDocument::createHtmlElement('img', null, $attribute->get())));
   }
   public function widget_list($data){
     $data = new PluginWfArray($data);
