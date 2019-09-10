@@ -21,3 +21,13 @@ author: null
 links:
   Github: 'https://octicons.github.com/'
 description: ''
+webmaster:
+  element:
+    -
+      type: strong
+      innerHTML: Widget list.
+    -
+      type: widget
+      data:
+        plugin: 'icons/octicons'
+        method: list
