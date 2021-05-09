@@ -1,15 +1,19 @@
 # Buto-Plugin-IconsOcticons
 Svg icons.
 
-List all icons with names.
+## Icon
+Showing an alert icon.
 ```
 type: widget
 data:
   plugin: 'icons/octicons'
-  method: list
+  method: svg
+  data:
+    name: alert
 ```
 
-Get one icon.
+### Attribute
+One could add attribute param.
 ```
 type: widget
 data:
@@ -21,4 +25,11 @@ data:
       id: _my_svg_icon_
 ```
 
-
+## List of all icons
+List all icons with names.
+```
+type: widget
+data:
+  plugin: 'icons/octicons'
+  method: list
+```
