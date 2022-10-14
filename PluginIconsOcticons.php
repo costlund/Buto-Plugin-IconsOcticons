@@ -9,17 +9,21 @@ class PluginIconsOcticons{
     $attribute->set('src', '/plugin/icons/octicons/build/svg/'.$data->get('data/name').'.svg');
     wfDocument::renderElement(array(wfDocument::createHtmlElement('img', null, $attribute->get())));
   }
-  public function widget_list($data){
-    $data = new PluginWfArray($data);
+  public function widget_list(){
     $scan_dir = wfFilesystem::getScandir(wfGlobals::getWebDir().'/plugin/icons/octicons/build/svg/');
-    $element = array();
-    foreach ($scan_dir as $key => $value) {
-      $src = '/plugin/icons/octicons/build/svg/'.$value;
-      $element[] = wfDocument::createHtmlElement('div', array(
-        wfDocument::createHtmlElement('span', str_replace('.svg', null, $value)),
-        wfDocument::createHtmlElement('img', null, array('src' => $src))
-        ));
+    /**
+     * table_data
+     */
+    $table_data = array();
+    foreach ($scan_dir as $filename) {
+      $src = '/plugin/icons/octicons/build/svg/'.$filename;
+      $table_data[] = array('name' => str_replace('.svg', '', $filename), 'img' => "<img src=$src>");
     }
-    wfDocument::renderElement(array(wfDocument::createHtmlElement('div', $element, array('class' => 'alert alert-info'))));
+    /**
+     * 
+     */
+    $element = new PluginWfYml(__DIR__.'/element/widget_list.yml');
+    $element->setByTag(array('table_data' => $table_data));
+    wfDocument::renderElement($element);
   }
 }

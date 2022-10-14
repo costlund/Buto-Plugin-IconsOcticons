@@ -1,5 +1,9 @@
-version: 1.1.1
+version: 1.1.2
 history:
+  1.1.2:
+    date: '2022-10-14'
+    title: List
+    description: 'Put icon list in datatable.'
   1.1.1:
     date: '2021-05-09'
     title: Readme
