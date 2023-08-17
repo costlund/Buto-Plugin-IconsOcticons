@@ -17,7 +17,7 @@ class PluginIconsOcticons{
     $table_data = array();
     foreach ($scan_dir as $filename) {
       $src = '/plugin/icons/octicons/build/svg/'.$filename;
-      $table_data[] = array('name' => str_replace('.svg', '', $filename), 'img' => "<img src=$src>");
+      $table_data[] = array('name' => wfPhpfunc::str_replace('.svg', '', $filename), 'img' => "<img src=$src>");
     }
     /**
      * 
